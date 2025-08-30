@@ -19,16 +19,6 @@
           uv
         ];
 
-        shellHook = ''
-          VENV=".venv/bin/activate"
-
-          if [[ ! -f $VENV ]]; then
-            uv venv
-          fi
-
-          source "$VENV"
-        '';
-
         env.LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath (
           with pkgs;
           [
